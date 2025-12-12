@@ -17,6 +17,11 @@ public class WalletController {
     @Autowired
     private WalletInf service;
 
+    @GetMapping("/")
+    public String test(){
+        return "Wallet is running";
+    }
+
     @GetMapping("/getAll")
     public List<Wallet> getAll(){
         return  service.getAll();

@@ -1,5 +1,5 @@
 # ------------ BUILD STAGE ------------
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
 
 # Copy Maven wrapper + pom
@@ -16,7 +16,7 @@ RUN mvn clean package -DskipTests
 
 
 # ------------ RUNTIME STAGE ------------
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
 
 # Copy built jar from build stage
